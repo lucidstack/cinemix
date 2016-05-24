@@ -1,11 +1,16 @@
 defmodule Cinemix.Mixer do
-  def mix(plot_1, plot_2) do
-    {:ok, model} = ExChain.MarkovModel.start_link
-    ExChain.MarkovModel.populate_model(model, plot_1 <> " " <> plot_2)
-    model
+  def mix(plots) when is_list(plots) do
+    mix(plots |> Enum.join(" "))
   end
 
-  def sentence(model) do
-    ExChain.SentenceGenerator.create_filtered_sentence(model)
+  def mix(plot) when is_binary(plot) do
+    tmp_path = "/tmp/cinemix_#{:rand.uniform(1000)}"
+
+    File.write(tmp_path, plot)
+    {mixed, 0} = System.cmd("marky_markov",
+                       ["speak", "-s", tmp_path, "-c", "8"])
+
+    File.rm(tmp_path)
+    mixed
   end
 end
