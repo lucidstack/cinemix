@@ -3,7 +3,7 @@ defmodule Cinemix.Mixfile do
 
   def project do
     [app: :cinemix,
-     version: "0.0.4",
+     version: "0.0.5",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -19,7 +19,7 @@ defmodule Cinemix.Mixfile do
   def application do
     [mod: {Cinemix, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :httpoison, :poison]]
+                    :httpoison, :poison, :csv]]
   end
 
   # Specifies which paths to compile per environment.
