@@ -11,8 +11,7 @@ config :cinemix, Cinemix.Endpoint,
   root: Path.dirname(__DIR__),
   secret_key_base: "lc1MyscmyOggcho2L3IEwNre242n+fIIJr9tB87rG0ZgxYkEpBPn6pyrFEDWYH1T",
   render_errors: [view: Cinemix.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Cinemix.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Cinemix.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
