@@ -14,7 +14,8 @@ use Mix.Config
 config :cinemix, Cinemix.Endpoint,
   http: [port: 4002],
   url: [host: "cinemix.lucidstack.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
