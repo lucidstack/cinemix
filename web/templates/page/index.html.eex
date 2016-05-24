@@ -1,0 +1,10 @@
+<p class="plot"><%= @mixed %></p>
+
+<div class="from" style="">
+  From:
+  <ul>
+    <%= for film <- @films do %>
+      <li><%= film %></li>
+    <% end %>
+  </ul>
+</div>
