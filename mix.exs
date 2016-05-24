@@ -19,7 +19,8 @@ defmodule Cinemix.Mixfile do
   def application do
     [mod: {Cinemix, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :postgrex, :phoenix_ecto, :httpoison, :poison, :parallel_stream, :csv, :edeliver]]
+                    :postgrex, :phoenix_ecto, :httpoison, :poison, :parallel_stream,
+                    :csv, :edeliver, :runtime_tools, :observer, :wx]]
   end
 
   # Specifies which paths to compile per environment.
