@@ -19,7 +19,7 @@ defmodule Cinemix.Mixfile do
   def application do
     [mod: {Cinemix, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :httpoison, :poison, :csv]]
+                    :postgrex, :phoenix_ecto, :httpoison, :poison, :parallel_stream, :csv, :edeliver]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,9 +40,9 @@ defmodule Cinemix.Mixfile do
      {:cowboy, "~> 1.0"},
      {:poison, "~> 2.1.0"},
      {:httpoison, "~> 0.8.3"},
-     {:ex_chain, github: "eljojo/ex_chain"},
      {:csv, "~> 1.4.0"},
-     {:edeliver, "~> 1.2.7"}]
+     {:edeliver, "~> 1.2.7"},
+     {:exrm, "~> 1.0.5"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
