@@ -2,7 +2,7 @@ defmodule Cinemix.PageController do
   use Cinemix.Web, :controller
 
   def index(conn, _params) do
-    random_films = File.stream!("priv/static/films/all.csv")
+    random_films = File.stream!(:code.priv_dir(:cinemix) |> Path.join("films/all.csv"))
     |> CSV.decode(headers: true)
     |> Enum.take_random(10)
     |> Enum.map(&Map.get(&1, "Film"))
@@ -14,7 +14,6 @@ defmodule Cinemix.PageController do
     |> Enum.join("")
 
     mixed = :os.cmd('echo "#{plot}" | marky_markov')
-    render conn, "index.html",
-      mixed: mixed, films: random_films
+    render conn, "index.html", mixed: mixed, films: random_films
   end
 end
