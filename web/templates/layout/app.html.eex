@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Cinemix!</title>
+    <meta name="description" content="Generate random plots from everyone's favourite movies">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
